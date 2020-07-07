@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,13 @@ namespace Flashcards
     /// </summary>
     public partial class MainWindow : Window
     {
-        LessonRepository _lessonRepository = new LessonRepository();
+        readonly LessonRepository _lessonRepository = new LessonRepository();
         public MainWindow()
         {
             InitializeComponent();
+
+            if(!File.Exists(Directory.GetCurrentDirectory() + @"\Lessons"))
+                Directory.CreateDirectory(Directory.GetCurrentDirectory() + @"\Lessons");
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -36,7 +40,6 @@ namespace Flashcards
         }
         private void Select_lesson(object sender, RoutedEventArgs e)
         {
-            _lessonRepository.UploadLessons();
             LessonsWindow lessonsWindow = new LessonsWindow();
             
             lessonsWindow.Show();

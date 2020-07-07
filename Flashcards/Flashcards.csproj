@@ -58,9 +58,16 @@
     <Compile Include="ILessonRepository.cs" />
     <Compile Include="Lesson.cs" />
     <Compile Include="LessonRepository.cs" />
+    <Compile Include="LessonWin.xaml.cs">
+      <DependentUpon>LessonWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Word.cs" />
     <Compile Include="WordRepository.cs" />
     <Page Include="LessonsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LessonWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

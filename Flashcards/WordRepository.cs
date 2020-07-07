@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 namespace Flashcards
 {
     class WordRepository
-    { 
+    {
+        //public List<Word> Words { get; set; }
+
+        //public Word Retrive(Word word)
+        //{
+
+        //}
+
     }
 }

@@ -9,7 +9,22 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         MouseDown="Window_MouseDown">
-    <StackPanel x:Name="sp">
-        
+    <StackPanel>
+        <ListBox SelectionMode="Extended" SelectionChanged="ListBox_SelectionChanged" x:Name="LessonsList">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Style.Triggers>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="True"></Condition>
+                                <Condition Property="IsFocused" Value="True"></Condition>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="FontWeight" Value="Bold"></Setter>
+                            <Setter Property="FontSize" Value="15"></Setter>
+                        </MultiTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
     </StackPanel>
 </Window>
