@@ -50,10 +50,8 @@ namespace Flashcards
         }
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LessonWin lessonWin = new LessonWin();
-            var findLesson = _lessonRepository.Lessons.Find(lesson => 
-                lesson.Name == LessonsList.SelectedItem.ToString());
-            System.Diagnostics.Debug.WriteLine(LessonsList.SelectedItem.ToString());
+            LessonWin lessonWin = new LessonWin(LessonsList.SelectedItem.ToString());
+
             lessonWin.Show();
         }
 

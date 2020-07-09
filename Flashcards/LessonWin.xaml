@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Flashcards"
         mc:Ignorable="d"
-        Title="LessonWin" Height="450" Width="800">
-    <Grid>
+        Title="LessonsWindow" Height="450" Width="350"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown">
+    <StackPanel Margin="0,40,0,0">
         
-    </Grid>
+        <Button Content="Start Learning" Width="120" FontSize="19" Click="Start_Learning"/>
+        <Button Content="Edit Word" Width="120" FontSize="20" Margin="5" Click="Edit_Word"/>
+        <Button Content="Add Word" Width="120" FontSize="20" Click="Add_Word"/>
+        <TextBox Text="Word" Width="160" FontSize="18" TextAlignment="Center" x:Name="Foreign" Margin="5"/>
+        <TextBox Text="Meaning" Width="160" FontSize="18" TextAlignment="Center" x:Name="Meaning" Margin="5"/>
+        <TextBox Text="Some notes" Width="200" Height="200" FontSize="16" TextAlignment="Center" x:Name="Description" Margin="5" TextWrapping="Wrap"/>
+
+    </StackPanel>
 </Window>

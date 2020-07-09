@@ -10,10 +10,12 @@ namespace Flashcards
     {
         public string Foreign { get; private set; }
         public string Meaning { get; private set; }
-        public Word(string foreign, string meaning)
+        public string Notes { get; private set; }
+        public Word(string foreign, string meaning, string notes)
         {
             Foreign = foreign;
             Meaning = meaning;
+            Notes = notes;
         }
     }
 }
