@@ -40,9 +40,7 @@ namespace Flashcards
         }
         private void Select_lesson(object sender, RoutedEventArgs e)
         {
-            LessonsWindow lessonsWindow = new LessonsWindow();
-            
-            lessonsWindow.Show();
+            Page1.Content = new ListOfLessons();
         }
         private void Add_lesson(object sender, RoutedEventArgs e)
         {

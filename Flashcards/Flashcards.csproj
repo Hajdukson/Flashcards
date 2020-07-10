@@ -56,18 +56,21 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ILessonRepository.cs" />
+    <Compile Include="LearningWindow.xaml.cs">
+      <DependentUpon>LearningWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Lesson.cs" />
     <Compile Include="LessonRepository.cs" />
-    <Compile Include="LessonWin.xaml.cs">
-      <DependentUpon>LessonWin.xaml</DependentUpon>
+    <Compile Include="ListOfLessons.xaml.cs">
+      <DependentUpon>ListOfLessons.xaml</DependentUpon>
     </Compile>
     <Compile Include="Word.cs" />
     <Compile Include="WordRepository.cs" />
-    <Page Include="LessonsWindow.xaml">
+    <Page Include="LearningWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LessonWin.xaml">
+    <Page Include="ListOfLessons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -78,9 +81,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="LessonsWindow.xaml.cs">
-      <DependentUpon>LessonsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

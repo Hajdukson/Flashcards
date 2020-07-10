@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -10,22 +8,22 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Flashcards
 {
     /// <summary>
-    /// Interaction logic for LessonsWindow.xaml
+    /// Interaction logic for ListOfLessons.xaml
     /// </summary>
-    public partial class LessonsWindow : Window
+    public partial class ListOfLessons : Page
     {
         readonly LessonRepository _lessonRepository = new LessonRepository();
 
         //List<Button> _buttons = new List<Button>();
-        public LessonsWindow()
+        public ListOfLessons()
         {
             InitializeComponent();
 
@@ -43,16 +41,10 @@ namespace Flashcards
             //    sp.Children.Add(newBtn);
             //}
         }
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-                DragMove();
-        }
+
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LessonWin lessonWin = new LessonWin(LessonsList.SelectedItem.ToString());
-
-            lessonWin.Show();
+            Page2.Content = new LearningWindow(LessonsList.SelectedItem.ToString());
         }
 
         //private List<LessonWin> LoadWindows(ObservableCollection<string> lessons)

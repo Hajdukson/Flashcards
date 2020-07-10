@@ -12,7 +12,7 @@ namespace Flashcards
     {
         public string Name { get; private set; }
 
-        public ObservableCollection<Word> Words 
+        public ObservableCollection<Word> Words
         { 
             get
             {
