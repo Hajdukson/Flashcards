@@ -17,25 +17,25 @@
                 <Label Margin="0,0,0,0" FontSize="30" VerticalAlignment="Center" Foreground="#F4F0E6">Flashcards</Label>
             </StackPanel>
 
-            <Frame Height="430" Background="#555" NavigationUIVisibility="Hidden" Name="Page1"/>
+            <Frame Height="430" Background="#555" NavigationUIVisibility="Hidden" x:Name="Page1"/>
 
             <StackPanel  VerticalAlignment="Bottom" HorizontalAlignment="Center" 
                          Orientation="Horizontal" Height="50">
 
-                <TextBox Text="Name the lessons" x:Name="LessonName" Width="100"
-                         Margin="10,5,0,5" Padding="5" TextAlignment="Center"/>
+                <TextBox Text="Name the lesson" x:Name="LessonName" Width="110"
+                         Margin="10,5,0,5" Padding="5" TextAlignment="Center" TextWrapping="Wrap"/>
                 
                 <Button Click="Add_lesson" Width="100"
-                            Margin="10,5,0,5" Padding="5" Background="#E24343"
-                            Content="Add lesson"/>
+                        Margin="10,5,0,5" Padding="5" Background="#E24343"
+                        Content="Add lesson"/>
                 
                 <Button Click="Select_lesson" Width="100" 
-                    Margin="10,5,0,5" Padding="5" Background="#E24343"
-                    Content="Select lesson"/>
+                        Margin="10,5,0,5" Padding="5" Background="#E24343"
+                        Content="Select lesson"/>
+
                 <Button Click="Exit_Button" Width="100"
                         Margin="10,5,0,5" Padding="5"  Background="#E24343"
                         Content="Exit"/>
-
             </StackPanel>
         </Grid>
     </Border>

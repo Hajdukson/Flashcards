@@ -16,8 +16,12 @@ namespace Flashcards
         {
             get
             {
-                var lines = File.ReadAllLines(_dbName);
-                return lines.Select(line => new Lesson(line)).ToList();
+                if(File.Exists(_dbName))
+                {   
+                    var lines = File.ReadAllLines(_dbName);
+                    return lines.Select(line => new Lesson(line)).ToList();
+                }
+                return null;
             }
         }
         public void NewLesson(Lesson lesson)

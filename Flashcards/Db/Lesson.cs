@@ -12,22 +12,27 @@ namespace Flashcards
     {
         public string Name { get; private set; }
 
-        public ObservableCollection<Word> Words
-        { 
+        public List<Word> Words
+        {
             get
             {
-                var lines = File.ReadAllLines(Directory.GetCurrentDirectory() + @"\Lessons\" + Name + ".txt");
-                var list = new ObservableCollection<Word>();
-                foreach (var line in lines)
-                {
-                    var vs = line.Split(';');
-                    var foreign = vs[0];
-                    var meaning = vs[1];
-                    var notes = vs[2];
-                    list.Add(new Word(foreign, meaning, notes));
+                var list = new List<Word>();
+
+                if (File.Exists(Directory.GetCurrentDirectory() + @"\Lessons\" + Name + ".txt"))
+                { 
+                    var lines = File.ReadAllLines(Directory.GetCurrentDirectory() + @"\Lessons\" + Name + ".txt");
+                    foreach (var line in lines)
+                    {
+                        var vs = line.Split(';');
+                        var foreign = vs[0];
+                        var meaning = vs[1];
+                        var notes = vs[2];
+                        list.Add(new Word(foreign, meaning, notes));
+                    }
+                    return list;
                 }
 
-                return list;
+                return null;
             }
         }
         public Lesson(string name)

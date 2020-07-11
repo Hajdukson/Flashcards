@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LearningWindow">
 
-    <StackPanel Margin="0,40,0,0">
+    <StackPanel Margin="0,20,0,0">
 
         <Button Content="Start Learning" Width="120" FontSize="19" Click="Start_Learning"/>
         <Button Content="Edit Word" Width="120" FontSize="20" Margin="5" Click="Edit_Word"/>

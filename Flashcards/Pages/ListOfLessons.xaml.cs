@@ -44,6 +44,7 @@ namespace Flashcards
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            LessonsList.Visibility = Visibility.Collapsed;
             Page2.Content = new LearningWindow(LessonsList.SelectedItem.ToString());
         }
 

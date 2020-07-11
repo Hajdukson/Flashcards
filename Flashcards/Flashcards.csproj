@@ -55,22 +55,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ILessonRepository.cs" />
-    <Compile Include="LearningWindow.xaml.cs">
+    <Compile Include="Db\ILessonRepository.cs" />
+    <Compile Include="FlashcardsLogic.cs" />
+    <Compile Include="Pages\LearningWindow.xaml.cs">
       <DependentUpon>LearningWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Lesson.cs" />
-    <Compile Include="LessonRepository.cs" />
-    <Compile Include="ListOfLessons.xaml.cs">
+    <Compile Include="Db\Lesson.cs" />
+    <Compile Include="Db\LessonRepository.cs" />
+    <Compile Include="Pages\ListOfLessons.xaml.cs">
       <DependentUpon>ListOfLessons.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Word.cs" />
-    <Compile Include="WordRepository.cs" />
-    <Page Include="LearningWindow.xaml">
+    <Compile Include="Db\Word.cs" />
+    <Page Include="Pages\LearningWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListOfLessons.xaml">
+    <Page Include="Pages\ListOfLessons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
