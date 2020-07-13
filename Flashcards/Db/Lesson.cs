@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Flashcards
 {
-    class Lesson
+    public class Lesson
     {
         public string Name { get; private set; }
 

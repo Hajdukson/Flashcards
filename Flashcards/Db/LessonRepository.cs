@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Flashcards
 {
-    class LessonRepository : ILessonRepository
+    public class LessonRepository : ILessonRepository
     {
         private readonly string _dbName = "database.txt";
         public List<Lesson> Lessons

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Flashcards
 {
-    class Word
+    public class Word
     {
         public string Foreign { get; private set; }
         public string Meaning { get; private set; }

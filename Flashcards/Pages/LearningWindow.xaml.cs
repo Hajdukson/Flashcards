@@ -49,8 +49,8 @@ namespace Flashcards
         }
         private void Start_Learning(object sender, RoutedEventArgs e)
         {
-            if (_lesson.Words.Count >= 5)
-                MessageBox.Show("Lesson is starting");
+            StartLearningWindow startLearningWindow = new StartLearningWindow(_lesson);
+            startLearningWindow.Show();
         }
         private void Edit_Word(object sender, RoutedEventArgs e)
         {

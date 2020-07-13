@@ -66,6 +66,9 @@
       <DependentUpon>ListOfLessons.xaml</DependentUpon>
     </Compile>
     <Compile Include="Db\Word.cs" />
+    <Compile Include="StartLearningWindow.xaml.cs">
+      <DependentUpon>StartLearningWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Pages\LearningWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +89,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StartLearningWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
