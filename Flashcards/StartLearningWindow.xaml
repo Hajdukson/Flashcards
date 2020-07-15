@@ -8,7 +8,7 @@
         Title="StartLearningWindow" Height="450" Width="800">
     <StackPanel>
         <Label x:Name="drawnWord"/>
-        <TextBox x:Name="typedWord"/>
+        <TextBox x:Name="enteredWord"/>
         <TextBlock x:Name="description"/>
         <Button Content="Check Word" Click="Check_Word"/>
     </StackPanel>

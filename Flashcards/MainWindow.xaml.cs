@@ -44,21 +44,25 @@ namespace Flashcards
         }
         private void Add_lesson(object sender, RoutedEventArgs e)
         {
-            if(LessonName.Text.ToLower() != "name the lesson")
+            var lesson = new Lesson(LessonName.Text);
+            
+            if (lesson.IsValid)
             {
-                var lesson = new Lesson(LessonName.Text);
-
-                if(_lessonRepository.Lessons != null)
-                { 
+                if (_lessonRepository.Lessons != null)
+                {
                     var retriveExistingLesson = _lessonRepository.Lessons.Find(retriveLesson => retriveLesson.Name == LessonName.Text);
                     if (retriveExistingLesson == null)
                     {
                         _lessonRepository.NewLesson(lesson);
                     }
+                    else
+                        MessageBox.Show("The lesson exist.");
                 }
                 else
                     _lessonRepository.NewLesson(lesson);
             }
+            else
+               MessageBox.Show("Enter the lesson name.");
         }
     }
 }

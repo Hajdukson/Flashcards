@@ -30,22 +30,23 @@ namespace Flashcards
         }
         private void Add_Word(object sender, RoutedEventArgs e)
         {
-            if(Foreign.Text.ToLower() != "word" && Meaning.Text.ToLower() != "meaning")
-            {
-                if (Description.Text.ToLower() == "some notes")
-                    Description.Text = "";
-
                 var word = new Word(Foreign.Text, Meaning.Text, Description.Text);
 
-                if (_lesson.Words != null)
-                { 
-                    var retriveExistingWord = _lesson.Words.Find(find => find.Foreign == Foreign.Text);
-                    if(retriveExistingWord == null)
+                if (word.IsValid)
+                {
+                    if (_lesson.Words != null)
+                    {
+                        var retriveExistingWord = _lesson.Words.Find(find => find.Foreign == Foreign.Text);
+                        if (retriveExistingWord == null)
+                            _lesson.NewWord(word);
+                        else
+                            MessageBox.Show("The word exist.");
+                    }
+                    else
                         _lesson.NewWord(word);
                 }
                 else
-                    _lesson.NewWord(word);
-            }
+                    MessageBox.Show("Fill all fields.");
         }
         private void Start_Learning(object sender, RoutedEventArgs e)
         {

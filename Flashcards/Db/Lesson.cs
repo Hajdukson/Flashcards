@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Flashcards
 {
-    public class Lesson
+    public class Lesson : EntityBase
     {
         public string Name { get; private set; }
 
@@ -52,7 +53,19 @@ namespace Flashcards
                 File.WriteAllText(dir, line);
             else
                 File.AppendAllText(dir, line);
-                    
+        }
+
+        protected override bool Validate()
+        {
+            var isValid = true;
+
+            if (Name == "name the lesson")
+                isValid = false;
+
+            if (string.IsNullOrWhiteSpace(Name))
+                isValid = false;
+
+            return isValid;
         }
     }
 }
