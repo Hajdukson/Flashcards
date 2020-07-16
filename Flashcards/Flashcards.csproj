@@ -57,7 +57,6 @@
     </ApplicationDefinition>
     <Compile Include="Db\ILessonRepository.cs" />
     <Compile Include="EntityBase.cs" />
-    <Compile Include="Logic.cs" />
     <Compile Include="Pages\LearningWindow.xaml.cs">
       <DependentUpon>LearningWindow.xaml</DependentUpon>
     </Compile>

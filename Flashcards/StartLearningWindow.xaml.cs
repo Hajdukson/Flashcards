@@ -20,22 +20,18 @@ namespace Flashcards
     public partial class StartLearningWindow : Window
     {
         readonly Lesson _lesson;
-        readonly Logic _logic;
         public StartLearningWindow(Lesson lesson)
         {
             InitializeComponent();
 
             _lesson = lesson;
 
-            _logic = new Logic(_lesson);
-
-            drawnWord.Content = _logic.RetriveDrawnWord().Foreign;
+            drawnWord.Content = _lesson.RetriveDrawnWord().Foreign;
         }
-
 
         private void Check_Word(object sender, RoutedEventArgs e)
         {
-            drawnWord.Content = _logic.RetriveDrawnWord().Foreign;
+            drawnWord.Content = _lesson.RetriveDrawnWord().Foreign;
         }
     }
 }

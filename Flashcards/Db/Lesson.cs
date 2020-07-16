@@ -17,7 +17,17 @@ namespace Flashcards
         {
             get
             {
-                var list = new List<Word>();
+                var words = new List<Word>();
+
+                if(Name == "testLesson")
+                {
+                    words = new List<Word>
+                    {
+                        new Word("moon", "księżyc", ""),
+                        new Word("sun", "słońce", "the sun is yellow"),
+                    };
+                    return words;
+                }
 
                 if (File.Exists(Directory.GetCurrentDirectory() + @"\Lessons\" + Name + ".txt"))
                 { 
@@ -28,13 +38,31 @@ namespace Flashcards
                         var foreign = vs[0];
                         var meaning = vs[1];
                         var notes = vs[2];
-                        list.Add(new Word(foreign, meaning, notes));
+                        words.Add(new Word(foreign, meaning, notes));
                     }
-                    return list;
+                    return words;
                 }
 
                 return null;
             }
+        }
+        public List<Word> CheckIfWordRepoIsFalse()
+        {
+            var words = new List<Word>
+            {
+                new Word(" ", "dsadas", ""),
+                new Word("", "dsadd", "notes"),
+                new Word("dsad", "", "dsa"),
+                new Word("","",""),
+                new Word(""," ",""),
+                new Word("word","świat", ""),
+                new Word("znaczenie","meaning", "")
+            };
+            return words;
+        }
+        public Lesson()
+        {
+
         }
         public Lesson(string name)
         {
@@ -54,12 +82,23 @@ namespace Flashcards
             else
                 File.AppendAllText(dir, line);
         }
+        public Word RetriveDrawnWord()
+        {
+            List<Word> words = Words;
 
+            if (words == null)
+                return null;
+
+            Random random = new Random();
+            int index = random.Next(0, words.Count);
+
+            return words.ElementAt(index);
+        }
         protected override bool Validate()
         {
             var isValid = true;
 
-            if (Name == "name the lesson")
+            if (Name.ToLower() == "name the lesson")
                 isValid = false;
 
             if (string.IsNullOrWhiteSpace(Name))

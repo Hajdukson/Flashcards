@@ -25,10 +25,13 @@ namespace Flashcards
 
             if (string.IsNullOrWhiteSpace(Foreign))
                 isValid = false;
+            else if (Foreign.ToLower() == "word")
+                isValid = false;
 
             if (string.IsNullOrWhiteSpace(Meaning))
                 isValid = false;
-
+            else if (Meaning.ToLower() == "meaning")
+                isValid = false;
 
             return isValid;   
         }
