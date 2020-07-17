@@ -55,17 +55,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Db\ILessonRepository.cs" />
+    <Compile Include="Logic\ILearning.cs" />
+    <Compile Include="Logic\ILessonRepository.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="Pages\LearningWindow.xaml.cs">
       <DependentUpon>LearningWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Db\Lesson.cs" />
-    <Compile Include="Db\LessonRepository.cs" />
+    <Compile Include="Logic\Lesson.cs" />
+    <Compile Include="Logic\LessonRepository.cs" />
     <Compile Include="Pages\ListOfLessons.xaml.cs">
       <DependentUpon>ListOfLessons.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Db\Word.cs" />
+    <Compile Include="Logic\Word.cs" />
     <Compile Include="StartLearningWindow.xaml.cs">
       <DependentUpon>StartLearningWindow.xaml</DependentUpon>
     </Compile>

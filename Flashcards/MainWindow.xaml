@@ -10,7 +10,21 @@
         WindowStyle="None"
         MouseDown="Window_MouseDown"
         >
-
+    <Window.Resources>
+        <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
+            <Setter Property="BorderBrush" Value="#000000"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="Cursor" Value="Hand"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    
     <Border CornerRadius="5" BorderThickness="2" Background="#333" BorderBrush="#444">
         <Grid Margin="5,5,5,2">
             <StackPanel WindowChrome.IsHitTestVisibleInChrome="True" Height="45" VerticalAlignment="Top" Orientation="Horizontal">
@@ -27,15 +41,15 @@
                 
                 <Button Click="Add_lesson" Width="100"
                         Margin="10,5,0,5" Padding="5" Background="#E24343"
-                        Content="Add lesson"/>
+                        Content="Add lesson" Style="{StaticResource buttonStyle}"/>
                 
                 <Button Click="Select_lesson" Width="100" 
                         Margin="10,5,0,5" Padding="5" Background="#E24343"
-                        Content="Select lesson"/>
+                        Content="Select lesson" Style="{StaticResource buttonStyle}"/>
 
                 <Button Click="Exit_Button" Width="100"
                         Margin="10,5,0,5" Padding="5"  Background="#E24343"
-                        Content="Exit"/>
+                        Content="Exit" Style="{StaticResource buttonStyle}"/>
             </StackPanel>
         </Grid>
     </Border>

@@ -41,6 +41,10 @@ namespace Flashcards
                             _lesson.NewWord(word);
                         else
                             MessageBox.Show("The word exist.");
+
+                        Foreign.Text = "Word";
+                        Meaning.Text = "Meaning";
+                        Description.Text = "Some notes";
                     }
                     else
                         _lesson.NewWord(word);

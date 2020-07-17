@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,19 +21,37 @@ namespace Flashcards
     /// </summary>
     public partial class StartLearningWindow : Window
     {
-        readonly Lesson _lesson;
+        readonly ILearning _lesson;
+        string _meaning;
         public StartLearningWindow(Lesson lesson)
         {
             InitializeComponent();
 
             _lesson = lesson;
 
-            drawnWord.Content = _lesson.RetriveDrawnWord().Foreign;
+            Word word = _lesson.RetriveDrawnWord();
+            drawnWord.Content = word.Foreign;
+            description.Text = word.Notes;
+            _meaning = word.Meaning;
         }
 
         private void Check_Word(object sender, RoutedEventArgs e)
         {
-            drawnWord.Content = _lesson.RetriveDrawnWord().Foreign;
+            if (_lesson.RetriveAnswer(enteredWord.Text, _meaning))
+                MessageBox.Show("Correct ans");
+            else
+                MessageBox.Show("Incorrect ans");
+
+            Word word = _lesson.RetriveDrawnWord();
+
+            if (word != null)
+            {
+                drawnWord.Content = word.Foreign;
+                description.Text = word.Notes;
+                _meaning = word.Meaning;
+            }
+            else
+                MessageBox.Show("The lesson was finished.");
         }
     }
 }

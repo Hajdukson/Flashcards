@@ -9,17 +9,17 @@ using System.Threading.Tasks;
 
 namespace Flashcards
 {
-    public class Lesson : EntityBase
+    public class Lesson : EntityBase, ILearning
     {
         public string Name { get; private set; }
-
+        private List<Word> _words;
         public List<Word> Words
         {
             get
             {
                 var words = new List<Word>();
 
-                if(Name == "testLesson")
+                if (Name == "testLesson")
                 {
                     words = new List<Word>
                     {
@@ -30,7 +30,7 @@ namespace Flashcards
                 }
 
                 if (File.Exists(Directory.GetCurrentDirectory() + @"\Lessons\" + Name + ".txt"))
-                { 
+                {
                     var lines = File.ReadAllLines(Directory.GetCurrentDirectory() + @"\Lessons\" + Name + ".txt");
                     foreach (var line in lines)
                     {
@@ -40,10 +40,8 @@ namespace Flashcards
                         var notes = vs[2];
                         words.Add(new Word(foreign, meaning, notes));
                     }
-                    return words;
                 }
-
-                return null;
+                return words;
             }
         }
         public List<Word> CheckIfWordRepoIsFalse()
@@ -67,6 +65,7 @@ namespace Flashcards
         public Lesson(string name)
         {
             Name = name;
+            _words = Words;
         }
         public void NewWord(Word word)
         {
@@ -84,15 +83,26 @@ namespace Flashcards
         }
         public Word RetriveDrawnWord()
         {
-            List<Word> words = Words;
-
-            if (words == null)
+            if (_words == null)
                 return null;
 
             Random random = new Random();
-            int index = random.Next(0, words.Count);
+            int index = random.Next(0, _words.Count);
 
-            return words.ElementAt(index);
+            return Words.ElementAt(index);
+        }
+        public bool RetriveAnswer(string enteredWord, string drawnWord)
+        {
+            var result = false;
+            if (enteredWord == drawnWord)
+            {
+                var findDrawnWord = _words.Find(word => word.Meaning == enteredWord);
+                System.Diagnostics.Debug.WriteLine(_words.Count);
+                //System.Diagnostics.Debug.WriteLine(findDrawnWord.Foreign);
+                _words.Remove(findDrawnWord);
+                result = true;
+            }
+            return result;
         }
         protected override bool Validate()
         {

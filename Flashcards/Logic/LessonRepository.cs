@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Flashcards
 {
@@ -39,6 +40,11 @@ namespace Flashcards
         }
         public ObservableCollection<string> UploadLessons()
         {
+            if (!File.Exists(_dbName))
+            {
+                MessageBox.Show("The repository is empty");
+                return null;
+            }
             var lines = File.ReadAllLines(_dbName);
             
             ObservableCollection<string> lessons = new ObservableCollection<string>();

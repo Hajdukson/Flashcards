@@ -9,6 +9,7 @@ namespace Flashcards
 {
     interface ILessonRepository
     {
+        List<Lesson> Lessons { get; }
         void NewLesson(Lesson lesson);
         ObservableCollection<string> UploadLessons();
     }
