@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Flashcards"
         mc:Ignorable="d"
-        Title="Flascards" Height="550" Width="800"
+        Title="Flascards" Height="550" Width="600"
         ResizeMode="NoResize"
         WindowStyle="None"
         MouseDown="Window_MouseDown"
@@ -31,7 +31,7 @@
                 <Label Margin="0,0,0,0" FontSize="30" VerticalAlignment="Center" Foreground="#F4F0E6">Flashcards</Label>
             </StackPanel>
 
-            <Frame Height="430" Background="#555" NavigationUIVisibility="Hidden" x:Name="Page1"/>
+            <Frame Height="430" Background="White" NavigationUIVisibility="Hidden" x:Name="Page1"/>
 
             <StackPanel  VerticalAlignment="Bottom" HorizontalAlignment="Center" 
                          Orientation="Horizontal" Height="50">

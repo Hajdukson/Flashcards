@@ -83,13 +83,13 @@ namespace Flashcards
         }
         public Word RetriveDrawnWord()
         {
-            if (_words == null)
+            if (_words == null || _words.Count == 0)
                 return null;
 
             Random random = new Random();
             int index = random.Next(0, _words.Count);
 
-            return Words.ElementAt(index);
+            return _words.ElementAt(index);
         }
         public bool RetriveAnswer(string enteredWord, string drawnWord)
         {

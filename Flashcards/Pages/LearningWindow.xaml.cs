@@ -30,27 +30,8 @@ namespace Flashcards
         }
         private void Add_Word(object sender, RoutedEventArgs e)
         {
-                var word = new Word(Foreign.Text, Meaning.Text, Description.Text);
-
-                if (word.IsValid)
-                {
-                    if (_lesson.Words != null)
-                    {
-                        var retriveExistingWord = _lesson.Words.Find(find => find.Foreign == Foreign.Text);
-                        if (retriveExistingWord == null)
-                            _lesson.NewWord(word);
-                        else
-                            MessageBox.Show("The word exist.");
-
-                        Foreign.Text = "Word";
-                        Meaning.Text = "Meaning";
-                        Description.Text = "Some notes";
-                    }
-                    else
-                        _lesson.NewWord(word);
-                }
-                else
-                    MessageBox.Show("Fill all fields.");
+            AddWordWindow addWordWindow = new AddWordWindow(_lesson);
+            addWordWindow.Show();
         }
         private void Start_Learning(object sender, RoutedEventArgs e)
         {
@@ -60,6 +41,11 @@ namespace Flashcards
         private void Edit_Word(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Delete_lesson(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Are you sure?", "Delete lesson", MessageBoxButton.YesNo);
         }
     }
 }

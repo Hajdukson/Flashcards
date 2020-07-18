@@ -29,8 +29,6 @@ namespace Flashcards
         {
             var lessonName = $"{lesson.Name}{Environment.NewLine}";
 
-            var newLesson = new Lesson(lesson.Name);
-
             if (!File.Exists(_dbName))
                 File.WriteAllText(_dbName, lessonName);
             else

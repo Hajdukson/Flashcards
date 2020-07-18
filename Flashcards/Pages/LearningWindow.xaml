@@ -25,12 +25,10 @@
     </Page.Resources>
     <StackPanel Margin="0,20,0,0">
 
-        <Button Content="Start Learning" Width="120" FontSize="20" Click="Start_Learning" Style="{StaticResource buttonStyle}"/>
-        <Button Content="Edit Word" Width="120" FontSize="20" Margin="5" Click="Edit_Word" Style="{StaticResource buttonStyle}"/>
-        <Button Content="Add Word" Width="120" FontSize="20" Click="Add_Word" Style="{StaticResource buttonStyle}"/>
-        <TextBox Text="Word" Width="160" FontSize="18" TextAlignment="Center" x:Name="Foreign" Margin="5"/>
-        <TextBox Text="Meaning" Width="160" FontSize="18" TextAlignment="Center" x:Name="Meaning" Margin="5"/>
-        <TextBox Text="Some notes" Width="200" Height="200" FontSize="16" TextAlignment="Center" x:Name="Description" Margin="5" TextWrapping="Wrap"/>
+        <Button Content="Start Learning" Width="140" FontSize="20" Click="Start_Learning" Style="{StaticResource buttonStyle}"/>
+        <Button Content="Edit Word" Width="140" FontSize="20" Margin="5" Click="Edit_Word" Style="{StaticResource buttonStyle}"/>
+        <Button Content="Add Word" Width="140" FontSize="20" Click="Add_Word" Style="{StaticResource buttonStyle}"/>
+        <Button Content="Delete lesson" Width="140" FontSize="20" Margin="5" Click="Delete_lesson"  Style="{StaticResource buttonStyle}"/>
 
     </StackPanel>
 </Page>

@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddWordWindow.xaml.cs">
+      <DependentUpon>AddWordWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Logic\ILearning.cs" />
     <Compile Include="Logic\ILessonRepository.cs" />
     <Compile Include="EntityBase.cs" />
@@ -70,6 +73,10 @@
     <Compile Include="StartLearningWindow.xaml.cs">
       <DependentUpon>StartLearningWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddWordWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LearningWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

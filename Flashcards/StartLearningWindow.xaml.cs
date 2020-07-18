@@ -51,7 +51,10 @@ namespace Flashcards
                 _meaning = word.Meaning;
             }
             else
+            {
                 MessageBox.Show("The lesson was finished.");
+                Close();
+            }
         }
     }
 }
