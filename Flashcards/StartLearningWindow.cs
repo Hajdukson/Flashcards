@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenTK;
+using System;
 using System.Collections.Generic;
 using System.Data.Odbc;
 using System.Diagnostics;
@@ -30,31 +31,58 @@ namespace Flashcards
             _lesson = lesson;
 
             Word word = _lesson.RetriveDrawnWord();
-            drawnWord.Content = word.Foreign;
+            drawnWord.Text = word.Meaning;
             description.Text = word.Notes;
-            _meaning = word.Meaning;
+            _meaning = word.Foreign;
         }
 
+        private void EnteredWord_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                WordHandler();
+            }
+        }
         private void Check_Word(object sender, RoutedEventArgs e)
         {
-            if (_lesson.RetriveAnswer(enteredWord.Text, _meaning))
-                MessageBox.Show("Correct ans");
-            else
-                MessageBox.Show("Incorrect ans");
-
+            WordHandler();
+        }
+        private void Next_Word(object sender, RoutedEventArgs e)
+        {
             Word word = _lesson.RetriveDrawnWord();
 
             if (word != null)
             {
-                drawnWord.Content = word.Foreign;
+                drawnWord.Text = word.Meaning;
                 description.Text = word.Notes;
-                _meaning = word.Meaning;
+                _meaning = word.Foreign;
             }
             else
             {
                 MessageBox.Show("The lesson was finished.");
                 Close();
             }
+
+            trueImg.Visibility = Visibility.Collapsed;
+            falseImg.Visibility = Visibility.Collapsed;
+            checkWord.Visibility = Visibility.Visible;
+            nextWord.Visibility = Visibility.Collapsed;
         }
+        private void WordHandler()
+        {
+            if (_lesson.RetriveAnswer(enteredWord.Text, _meaning))
+            {
+                trueImg.Visibility = Visibility.Visible;
+            }
+            else
+            { 
+                falseImg.Visibility = Visibility.Visible;
+            }
+
+            checkWord.Visibility = Visibility.Collapsed;
+            nextWord.Visibility = Visibility.Visible;
+        }
+
+
     }
 }

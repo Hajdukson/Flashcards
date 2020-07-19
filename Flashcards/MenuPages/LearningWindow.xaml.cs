@@ -42,7 +42,6 @@ namespace Flashcards
         {
 
         }
-
         private void Delete_lesson(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Are you sure?", "Delete lesson", MessageBoxButton.YesNo);

@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5C267B75-B913-4D33-8264-5506F270DA8B}</ProjectGuid>
+    <ProjectGuid>{5A75107E-6626-434D-A0A3-2AE0346DDD10}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FlashcardsTests</RootNamespace>
-    <AssemblyName>FlashcardsTests</AssemblyName>
+    <RootNamespace>FlashcardsTests.Common</RootNamespace>
+    <AssemblyName>FlashcardsTests.Common</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -49,16 +49,16 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WordAndLessonTest.cs" />
+    <Compile Include="StringHandlerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Flashcards\Flashcards.csproj">
-      <Project>{8b18b9df-7e97-41e8-aa34-077b5bb53032}</Project>
-      <Name>Flashcards</Name>
+    <ProjectReference Include="..\Flashcards.Common\Flashcards.Common.csproj">
+      <Project>{fedb954c-f7d7-4d58-b7a0-a1db38691a92}</Project>
+      <Name>Flashcards.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

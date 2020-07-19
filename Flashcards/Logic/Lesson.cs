@@ -96,7 +96,7 @@ namespace Flashcards
             var result = false;
             if (enteredWord == drawnWord)
             {
-                var findDrawnWord = _words.Find(word => word.Meaning == enteredWord);
+                var findDrawnWord = _words.Find(word => word.Foreign == enteredWord);
                 System.Diagnostics.Debug.WriteLine(_words.Count);
                 //System.Diagnostics.Debug.WriteLine(findDrawnWord.Foreign);
                 _words.Remove(findDrawnWord);

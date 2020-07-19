@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="OpenTK, Version=3.2.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.3.2\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -61,27 +64,27 @@
     <Compile Include="Logic\ILearning.cs" />
     <Compile Include="Logic\ILessonRepository.cs" />
     <Compile Include="EntityBase.cs" />
-    <Compile Include="Pages\LearningWindow.xaml.cs">
+    <Compile Include="MenuPages\LearningWindow.xaml.cs">
       <DependentUpon>LearningWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logic\Lesson.cs" />
     <Compile Include="Logic\LessonRepository.cs" />
-    <Compile Include="Pages\ListOfLessons.xaml.cs">
+    <Compile Include="MenuPages\ListOfLessons.xaml.cs">
       <DependentUpon>ListOfLessons.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logic\Word.cs" />
-    <Compile Include="StartLearningWindow.xaml.cs">
+    <Compile Include="StartLearningWindow.cs">
       <DependentUpon>StartLearningWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="AddWordWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\LearningWindow.xaml">
+    <Page Include="MenuPages\LearningWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ListOfLessons.xaml">
+    <Page Include="MenuPages\ListOfLessons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,6 +123,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,6 +132,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\false.png" />
+    <Resource Include="Images\true.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Flashcards.Common\Flashcards.Common.csproj">
+      <Project>{fedb954c-f7d7-4d58-b7a0-a1db38691a92}</Project>
+      <Name>Flashcards.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

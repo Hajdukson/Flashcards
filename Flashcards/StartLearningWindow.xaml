@@ -5,11 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Flashcards"
         mc:Ignorable="d"
-        Title="StartLearningWindow" Height="450" Width="800">
-    <StackPanel>
-        <Label x:Name="drawnWord"/>
-        <TextBox x:Name="enteredWord"/>
-        <TextBlock x:Name="description"/>
-        <Button Content="Check Word" Click="Check_Word"/>
-    </StackPanel>
+        Title="StartLearningWindow" Height="350" Width="500">
+
+    <Grid>
+        <StackPanel Margin="0,20">
+            <TextBlock x:Name="drawnWord" Width="150" Height="30" FontSize="20" Margin="5" TextAlignment="Center" />
+            <TextBox x:Name="enteredWord" Width="200" Height="30" FontSize="20" TextAlignment="Center" KeyDown="EnteredWord_KeyDown"/>
+                <TextBlock x:Name="description" Width="320" Height="60" FontSize="20" TextAlignment="Center" TextWrapping="Wrap"/>
+            <Grid>
+                <Button x:Name="checkWord" Content="Check" Click="Check_Word" Width="100" Height="30" FontSize="18" Margin="5"/>
+                <Button x:Name="nextWord" Content="Next" Click="Next_Word" Width="100" Height="30" FontSize="18" Visibility="Collapsed" Margin="5"/>
+            </Grid>
+        </StackPanel>
+        <Grid Width="35" Margin="343,60,114,232" RenderTransformOrigin="0.454,0.513">
+            <Image x:Name="trueImg" Source="Images/true.png" Width="20" Visibility="Collapsed"/>
+            <Image x:Name="falseImg" Source="Images/false.png" Width="20" Visibility="Collapsed"/>
+        </Grid>
+    </Grid>
 </Window>

@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FlashcardsTests
 {
     [TestClass]
-    public class WordAndLessonTests
+    public class WordAndLessonTest
     {
         [TestMethod]
         public void CheckIfLessonNameIsEmpty()
@@ -19,7 +19,7 @@ namespace FlashcardsTests
             var actual = lesson.IsValid;
 
             //assert
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void CheckIfLessonNameIsWhitespace()
@@ -32,7 +32,7 @@ namespace FlashcardsTests
             var actual = lesson.IsValid;
 
             //assert
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void CheckIfLessonNameIsWatermark()
@@ -45,7 +45,7 @@ namespace FlashcardsTests
             var actual = lesson.IsValid;
 
             //assert
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -59,7 +59,7 @@ namespace FlashcardsTests
             var actual = lesson.IsValid;
 
             //assert
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
         [TestMethod]
         public void CheckIfLessonRepoIsFalse()
@@ -77,7 +77,7 @@ namespace FlashcardsTests
             }
 
             //assert
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
         public void CheckIfLessonRepoIsTrue()
         {
@@ -94,7 +94,7 @@ namespace FlashcardsTests
             }
 
             //assert
-            Assert.AreEqual(actual, expected);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
