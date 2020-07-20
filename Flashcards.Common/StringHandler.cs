@@ -9,10 +9,15 @@ namespace Flashcards.Common
 {
     public static class StringHandler
     {
-        public static string RetrivWordInDescription(string word, string notes)
+        public static string RetrivAndHideWordInDescription(string word, string notes)
         {
-            
+            var myregex = new Regex(word, RegexOptions.IgnoreCase);
 
+            var hide = "_";
+            for (int i = 0; i < word.Length - 1; i++)
+                hide += '_';
+
+            return myregex.Replace(notes, hide);
         }
     }
 }

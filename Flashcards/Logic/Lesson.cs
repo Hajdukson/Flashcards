@@ -19,6 +19,7 @@ namespace Flashcards
             {
                 var words = new List<Word>();
 
+                //word repo is true
                 if (Name == "testLesson")
                 {
                     words = new List<Word>
