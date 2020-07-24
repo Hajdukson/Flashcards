@@ -19,7 +19,6 @@ namespace Flashcards
             {
                 var words = new List<Word>();
 
-                //word repo is true
                 if (Name == "testLesson")
                 {
                     words = new List<Word>
@@ -29,10 +28,9 @@ namespace Flashcards
                     };
                     return words;
                 }
-
-                if (File.Exists(Directory.GetCurrentDirectory() + @"\Lessons\" + Name + ".txt"))
+                if (File.Exists($"{Directory.GetCurrentDirectory()}/Lessons/{Name}.txt"))
                 {
-                    var lines = File.ReadAllLines(Directory.GetCurrentDirectory() + @"\Lessons\" + Name + ".txt");
+                    var lines = File.ReadAllLines($"{Directory.GetCurrentDirectory()}/Lessons/{Name}.txt");
                     foreach (var line in lines)
                     {
                         var vs = line.Split(';');
@@ -70,12 +68,12 @@ namespace Flashcards
         }
         public void NewWord(Word word)
         {
-            var line = string.Format("{0};{1};{2};{3}", word.Foreign,
+            var line = string.Format("{0};{1};{2};{3}", word.Foreign.ToLower(),
                 word.Meaning,
                 word.Notes,
                 Environment.NewLine);
 
-            string dir = Directory.GetCurrentDirectory()  + @"\Lessons\" + Name + ".txt";
+            string dir = $"{Directory.GetCurrentDirectory()}/Lessons/{Name}.txt";
 
             if (!File.Exists(dir))
                 File.WriteAllText(dir, line);

@@ -21,7 +21,7 @@ namespace Flashcards
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly LessonRepository _lessonRepository = new LessonRepository();
+        readonly INewLesson _lessonRepository = new LessonsRepository();
         public MainWindow()
         {
             InitializeComponent();
@@ -44,6 +44,7 @@ namespace Flashcards
         }
         private void Add_lesson(object sender, RoutedEventArgs e)
         {
+            
             var lesson = new Lesson(LessonName.Text);
             
             if (lesson.IsValid)

@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Flashcards
 {
-    interface ILessonRepository
+    interface INewLesson
     {
         List<Lesson> Lessons { get; }
         void NewLesson(Lesson lesson);
-        ObservableCollection<string> UploadLessons();
     }
 }

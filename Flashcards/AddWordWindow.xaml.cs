@@ -40,9 +40,9 @@ namespace Flashcards
                     else
                         MessageBox.Show("The word exist.");
 
-                    Foreign.Text = "Word";
-                    Meaning.Text = "Meaning";
-                    Description.Text = "Some notes";
+                    Foreign.Text = "";
+                    Meaning.Text = "";
+                    Description.Text = "";
                 }
                 else
                     _lesson.NewWord(word);

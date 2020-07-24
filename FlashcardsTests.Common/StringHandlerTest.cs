@@ -11,7 +11,7 @@ namespace FlashcardsTests.Common
         public void CheckIfWordWasTaken()
         {
             //arrange
-            var word = @"mother";
+            var word = "mother";
             var note = "My mother is the best.";
             var expected = "My ______ is the best.";
 
@@ -39,7 +39,7 @@ namespace FlashcardsTests.Common
         public void CheckIfWordWasTaken3()
         {
             //arrange
-            var word = "mountain";
+            var word = "Mountain";
             var note = "The mountains are the highest thing on earth.\n The highest mountain is Mount Everest";
             var expected = "The ________s are the highest thing on earth.\n The highest ________ is Mount Everest";
 

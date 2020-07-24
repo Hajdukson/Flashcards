@@ -20,7 +20,7 @@ namespace Flashcards
     /// </summary>
     public partial class LearningWindow : Page
     {
-        readonly LessonRepository _lessonRepository = new LessonRepository();
+        readonly INewLesson _lessonRepository = new LessonsRepository();
         readonly Lesson _lesson;
         public LearningWindow(string lessonName)
         {
@@ -35,8 +35,13 @@ namespace Flashcards
         }
         private void Start_Learning(object sender, RoutedEventArgs e)
         {
-            StartLearningWindow startLearningWindow = new StartLearningWindow(_lesson);
-            startLearningWindow.Show();
+            if (_lesson.Words.Count < 2)
+                MessageBox.Show("Add two words at least.");
+            else
+            { 
+                StartLearningWindow startLearningWindow = new StartLearningWindow(_lesson);
+                startLearningWindow.Show();
+            }
         }
         private void Edit_Word(object sender, RoutedEventArgs e)
         {

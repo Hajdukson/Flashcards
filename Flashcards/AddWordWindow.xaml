@@ -27,12 +27,12 @@
                     <Label Content="Word:" Width="50" Height="30" VerticalAlignment="Top"/>
                     <TextBox FontSize="18" Width="100" Height="30" x:Name="Foreign" VerticalAlignment="Top"/>
                     <Label Content="Meaning:" Height="30" VerticalAlignment="Top"/>
-                    <TextBox Width="100" Height="30" x:Name="Meaning" VerticalAlignment="Top"/>
+                    <TextBox FontSize="18" Width="100" Height="30" x:Name="Meaning" VerticalAlignment="Top"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="5,10,0,0">
                     <Label Content="Some notes:"/>
-                    <TextBox Width="233" Height="30" x:Name="Description" VerticalAlignment="Top"/>
+                    <TextBox FontSize="18" Width="233" Height="30" x:Name="Description" VerticalAlignment="Top"/>
                 </StackPanel>
             </Grid>
 

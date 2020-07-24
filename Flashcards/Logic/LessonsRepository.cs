@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace Flashcards
 {
-    public class LessonRepository : ILessonRepository
+    public class LessonsRepository : INewLesson
     {
         private readonly string _dbName = "database.txt";
         public List<Lesson> Lessons

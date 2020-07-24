@@ -20,7 +20,7 @@ namespace Flashcards
     /// </summary>
     public partial class ListOfLessons : Page
     {
-        readonly LessonRepository _lessonRepository = new LessonRepository();
+        readonly LessonsRepository _lessonRepository = new LessonsRepository();
 
         //List<Button> _buttons = new List<Button>();
         public ListOfLessons()

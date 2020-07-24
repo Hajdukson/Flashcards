@@ -62,13 +62,13 @@
       <DependentUpon>AddWordWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logic\ILearning.cs" />
-    <Compile Include="Logic\ILessonRepository.cs" />
+    <Compile Include="Logic\INewLesson.cs" />
     <Compile Include="EntityBase.cs" />
-    <Compile Include="MenuPages\LearningWindow.xaml.cs">
-      <DependentUpon>LearningWindow.xaml</DependentUpon>
+    <Compile Include="MenuPages\LessonWindow.xaml.cs">
+      <DependentUpon>LessonWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logic\Lesson.cs" />
-    <Compile Include="Logic\LessonRepository.cs" />
+    <Compile Include="Logic\LessonsRepository.cs" />
     <Compile Include="MenuPages\ListOfLessons.xaml.cs">
       <DependentUpon>ListOfLessons.xaml</DependentUpon>
     </Compile>
@@ -80,7 +80,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MenuPages\LearningWindow.xaml">
+    <Page Include="MenuPages\LessonWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
