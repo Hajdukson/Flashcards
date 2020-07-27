@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,14 +22,14 @@ namespace Flashcards
     /// </summary>
     public partial class ListOfLessons : Page
     {
-        readonly LessonsRepository _lessonRepository = new LessonsRepository();
+        readonly ILessons _lessonRepository = new LessonsRepository();
 
         //List<Button> _buttons = new List<Button>();
         public ListOfLessons()
         {
             InitializeComponent();
 
-            LessonsList.ItemsSource = _lessonRepository.UploadLessons();
+            LessonsList.ItemsSource = LessonsToString(_lessonRepository.Lessons);
 
             //foreach (var lesson in lessons)
             //{
@@ -41,11 +43,20 @@ namespace Flashcards
             //    sp.Children.Add(newBtn);
             //}
         }
+        private ObservableCollection<string> LessonsToString(List<Lesson> lessons)
+        {
+            ObservableCollection<string> lines = new ObservableCollection<string>();
+            foreach (var lesson in lessons)
+            {
+                lines.Add(lesson.Name);
+            }
+            return lines;
+        }
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             LessonsList.Visibility = Visibility.Collapsed;
-            Page2.Content = new LessonWindow(LessonsList.SelectedItem.ToString());
+            Page2.Content = new LearningWindow(LessonsList.SelectedItem.ToString());
         }
 
         //private List<LessonWin> LoadWindows(ObservableCollection<string> lessons)

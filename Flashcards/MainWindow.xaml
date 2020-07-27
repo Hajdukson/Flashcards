@@ -9,7 +9,7 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         MouseDown="Window_MouseDown"
-        >
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
             <Setter Property="BorderBrush" Value="#000000"/>

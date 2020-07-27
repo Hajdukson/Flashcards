@@ -58,11 +58,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddWordWindow.xaml.cs">
-      <DependentUpon>AddWordWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Logic\ILearning.cs" />
     <Compile Include="Logic\INewLesson.cs" />
+    <Compile Include="Logic\ILearning.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="MenuPages\LessonWindow.xaml.cs">
       <DependentUpon>LessonWindow.xaml</DependentUpon>
@@ -73,13 +70,9 @@
       <DependentUpon>ListOfLessons.xaml</DependentUpon>
     </Compile>
     <Compile Include="Logic\Word.cs" />
-    <Compile Include="StartLearningWindow.cs">
+    <Compile Include="ApplicationWindows\StartLearningWindow.cs">
       <DependentUpon>StartLearningWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddWordWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MenuPages\LessonWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -100,7 +93,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="StartLearningWindow.xaml">
+    <Page Include="ApplicationWindows\StartLearningWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,8 +127,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\false.png" />
-    <Resource Include="Images\true.png" />
+    <Resource Include="ApplicationWindows\Images\false.png" />
+    <Resource Include="ApplicationWindows\Images\true.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Flashcards.Common\Flashcards.Common.csproj">

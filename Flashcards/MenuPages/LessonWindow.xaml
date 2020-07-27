@@ -1,18 +1,18 @@
-﻿<Page x:Class="Flashcards.LearningWindow"
+﻿<Page x:Class="Flashcards.LessonWindow"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Flashcards"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="430" d:DesignWidth="600"
       Title="LearningWindow"
       >
     <Page.Resources>
         <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
             <Setter Property="BorderBrush" Value="#000000"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Background" Value="#E24343"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <!--<Setter Property="Background" Value="#E24343"/>-->
             <Style.Triggers>
                 <MultiTrigger>
                     <MultiTrigger.Conditions>
@@ -23,12 +23,57 @@
             </Style.Triggers>
         </Style>
     </Page.Resources>
-    <StackPanel Margin="0,20,0,0">
+    <Grid Margin="0,20,0,0">
 
-        <Button Content="Start Learning" Width="140" FontSize="20" Click="Start_Learning" Style="{StaticResource buttonStyle}"/>
-        <Button Content="Edit Word" Width="140" FontSize="20" Margin="5" Click="Edit_Word" Style="{StaticResource buttonStyle}"/>
-        <Button Content="Add Word" Width="140" FontSize="20" Click="Add_Word" Style="{StaticResource buttonStyle}"/>
-        <Button Content="Delete lesson" Width="140" FontSize="20" Margin="5" Click="Delete_lesson"  Style="{StaticResource buttonStyle}"/>
+        <DataGrid x:Name="DataGridLesson" Margin="0,-18,0,181">
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Word" Width="200" Binding="{Binding Foreign}"/>
+                <DataGridTextColumn Header="Meaning" Width="200" Binding="{Binding Meaning}"/>
+                <DataGridTextColumn Header="Notes" Width="*" Binding="{Binding Notes}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Width="150" Margin="10,266,440,30">
+            <Button Content="Start Learning" Width="140" Height="30" FontSize="20" Click="Start_Learning" Style="{StaticResource buttonStyle}"/>
+            <Button Content="Edit Word" Width="140" Height="30" FontSize="20" Margin="5" Click="Edit_Word" Style="{StaticResource buttonStyle}"/>
+            <Button Content="Delete lesson" Width="140" Height="30" FontSize="20" Click="Delete_lesson"  Style="{StaticResource buttonStyle}"/>
+        </StackPanel>
 
-    </StackPanel>
+        <Border BorderThickness="3" BorderBrush="#444" Margin="165,274,23,46" Height="89.938" Width="412.353">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="320"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Margin="5" Grid.Column="0" Grid.Row="0">
+                        <Label Content="Word:" Width="50" Height="30" VerticalAlignment="Top"/>
+                        <TextBox FontSize="18" Width="100" Height="30" x:Name="Foreign" VerticalAlignment="Top"/>
+                        <Label Content="Meaning:" Height="30" VerticalAlignment="Top"/>
+                        <TextBox FontSize="18" Width="100" Height="30" x:Name="Meaning" VerticalAlignment="Top"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="5,10,0,0">
+                        <Label Content="Some notes:"/>
+                        <TextBox FontSize="18" Width="233" Height="30" x:Name="Description" VerticalAlignment="Top"/>
+                    </StackPanel>
+                </Grid>
+
+                
+                <Button Content="Add word" Margin="5" Height="30" Click="Add_Word" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource buttonStyle}"/>
+                
+            </Grid>
+        </Border>
+    </Grid>
 </Page>

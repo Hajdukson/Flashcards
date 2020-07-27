@@ -10,17 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Flashcards
 {
     /// <summary>
-    /// Interaction logic for AddWordWindow.xaml
+    /// Interaction logic for AddWord.xaml
     /// </summary>
-    public partial class AddWordWindow : Window
+    public partial class AddWord : UserControl
     {
         readonly Lesson _lesson;
-        public AddWordWindow(Lesson lesson)
+        public AddWord(Lesson lesson)
         {
             InitializeComponent();
 
@@ -49,17 +50,6 @@ namespace Flashcards
             }
             else
                 MessageBox.Show("Fill all fields.");
-        }
-
-        private void Close(object sender, RoutedEventArgs e)
-        {
-            Close();
-        }
-
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.LeftButton == MouseButtonState.Pressed)
-                DragMove();
         }
     }
 }
