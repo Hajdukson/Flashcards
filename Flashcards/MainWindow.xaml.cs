@@ -22,6 +22,7 @@ namespace Flashcards
     public partial class MainWindow : Window
     {
         readonly INewLesson _lessonRepository = new LessonsRepository();
+        ListOfLessons _listOfLessons = new ListOfLessons();
         public MainWindow()
         {
             InitializeComponent();
@@ -41,6 +42,7 @@ namespace Flashcards
         private void Select_lesson(object sender, RoutedEventArgs e)
         {
             Page1.Content = new ListOfLessons();
+            
         }
         private void Add_lesson(object sender, RoutedEventArgs e)
         {

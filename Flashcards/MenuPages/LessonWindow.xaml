@@ -24,27 +24,14 @@
         </Style>
     </Page.Resources>
     <Grid Margin="0,20,0,0">
-
-        <DataGrid x:Name="DataGridLesson" Margin="0,-18,0,181">
-            <DataGrid.Resources>
-                <Style TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="FontWeight" Value="SemiBold"/>
-                </Style>
-            </DataGrid.Resources>
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Word" Width="200" Binding="{Binding Foreign}"/>
-                <DataGridTextColumn Header="Meaning" Width="200" Binding="{Binding Meaning}"/>
-                <DataGridTextColumn Header="Notes" Width="*" Binding="{Binding Notes}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <StackPanel Width="150" Margin="10,266,440,30">
+        <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10">
             <Button Content="Start Learning" Width="140" Height="30" FontSize="20" Click="Start_Learning" Style="{StaticResource buttonStyle}"/>
             <Button Content="Edit Word" Width="140" Height="30" FontSize="20" Margin="5" Click="Edit_Word" Style="{StaticResource buttonStyle}"/>
             <Button Content="Delete lesson" Width="140" Height="30" FontSize="20" Click="Delete_lesson"  Style="{StaticResource buttonStyle}"/>
         </StackPanel>
 
-        <Border BorderThickness="3" BorderBrush="#444" Margin="165,274,23,46" Height="89.938" Width="412.353">
-            <Grid>
+        <Border BorderThickness="3" BorderBrush="#444" Height="90" Width="412" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="95,170,93,150">
+            <Grid Margin="-3,-3,3,3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="320"/>
                     <ColumnDefinition/>
@@ -70,9 +57,8 @@
                     </StackPanel>
                 </Grid>
 
-                
+
                 <Button Content="Add word" Margin="5" Height="30" Click="Add_Word" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource buttonStyle}"/>
-                
             </Grid>
         </Border>
     </Grid>

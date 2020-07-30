@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Flashcards.ApplicationWindows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,12 +31,6 @@ namespace Flashcards
             _lessonName = lessonName;
 
             _lesson = _lessonRepository.Lessons.Find(lesson => lesson.Name == _lessonName);
-
-            foreach (var word in _lesson.Words)
-            {
-                DataGridLesson.Items.Add(word);
-            }
-            
         }
         private void Add_Word(object sender, RoutedEventArgs e)
         {
@@ -49,7 +44,6 @@ namespace Flashcards
                    if (retriveExistingWord == null)
                    { 
                         _lesson.NewWord(word);
-                        DataGridLesson.Items.Add(word);
                     }
                    else
                         MessageBox.Show("The word exist.");
@@ -61,7 +55,6 @@ namespace Flashcards
                 else
                 { 
                     _lesson.NewWord(word);
-                    DataGridLesson.Items.Add(word);
                 }
             }
             else
@@ -80,7 +73,8 @@ namespace Flashcards
         }
         private void Edit_Word(object sender, RoutedEventArgs e)
         {
-
+            EditWord editWord = new EditWord(_lesson);
+            editWord.Show();
         }
         private void Delete_lesson(object sender, RoutedEventArgs e)
         {

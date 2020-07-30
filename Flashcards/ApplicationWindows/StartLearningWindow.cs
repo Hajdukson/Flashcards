@@ -31,9 +31,7 @@ namespace Flashcards
         {
             InitializeComponent();
 
-
             _lesson = lesson;
-
 
             Word word = _lesson.RetriveDrawnWord();
             _word = word;
