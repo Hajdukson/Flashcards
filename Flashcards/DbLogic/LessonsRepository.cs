@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenTK.Graphics.ES11;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
@@ -10,7 +11,7 @@ using System.Windows;
 
 namespace Flashcards
 {
-    public class LessonsRepository : INewLesson
+    public class LessonsRepository : ILessonHandler
     {
         private readonly string _dbName = "database.txt";
         public List<Lesson> Lessons
@@ -35,6 +36,21 @@ namespace Flashcards
                 File.AppendAllText(_dbName, lessonName);
 
             UploadLessons();
+        }
+        public void DeleteLesson(Lesson lesson)
+        {
+            var lessonToDelete = Lessons.Find(l => l.Name == lesson.Name);
+
+            Lessons.Remove(lessonToDelete);
+
+            var lines = new List<string>();
+
+            foreach (var line in lines)
+            {
+                lines.Add(line);
+            }
+
+            File.WriteAllLines(_dbName, lines);
         }
         public ObservableCollection<string> UploadLessons()
         {

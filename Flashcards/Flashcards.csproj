@@ -61,18 +61,18 @@
     <Compile Include="ApplicationWindows\EditWord.xaml.cs">
       <DependentUpon>EditWord.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Logic\INewLesson.cs" />
-    <Compile Include="Logic\ILearning.cs" />
+    <Compile Include="DbLogic\ILessonHandler.cs" />
+    <Compile Include="DbLogic\ILearning.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="MenuPages\LessonWindow.xaml.cs">
       <DependentUpon>LessonWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Logic\Lesson.cs" />
-    <Compile Include="Logic\LessonsRepository.cs" />
+    <Compile Include="DbLogic\Lesson.cs" />
+    <Compile Include="DbLogic\LessonsRepository.cs" />
     <Compile Include="MenuPages\ListOfLessons.xaml.cs">
       <DependentUpon>ListOfLessons.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Logic\Word.cs" />
+    <Compile Include="DbLogic\Word.cs" />
     <Compile Include="ApplicationWindows\StartLearningWindow.cs">
       <DependentUpon>StartLearningWindow.xaml</DependentUpon>
     </Compile>

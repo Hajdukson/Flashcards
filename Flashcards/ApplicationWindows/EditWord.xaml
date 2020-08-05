@@ -29,6 +29,6 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <Button Content="Aplay" Width="200" Margin="10" Click="AplayChanges_Click"/>
+        <Button Content="Apply" Width="200" Margin="10" Click="ApplyChanges_Click"/>
     </StackPanel>
 </Window>

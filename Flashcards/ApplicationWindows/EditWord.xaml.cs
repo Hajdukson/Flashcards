@@ -34,18 +34,12 @@ namespace Flashcards.ApplicationWindows
             }
             DataGridLesson.ItemsSource = listOfWords;
         }
-        private void AplayChanges_Click(object sender, RoutedEventArgs e)
+        private void ApplyChanges_Click(object sender, RoutedEventArgs e)
         {
-            List<string> lines = new List<string>();
+            List<string> lines = (from word in listOfWords
+                                  let line = string.Format("{0};{1};{2}", word.Foreign.ToLower(),
+                                  word.Meaning, word.Notes)select line).ToList();
 
-            foreach (var word in listOfWords)
-            {
-                var line = string.Format("{0};{1};{2}", word.Foreign.ToLower(),
-                    word.Meaning,
-                    word.Notes);
-
-                lines.Add(line);
-            }
             File.WriteAllLines($"{Directory.GetCurrentDirectory()}/Lessons/{_lesson.Name}.txt", lines);
         }
     }

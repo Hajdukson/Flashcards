@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Flashcards
 {
-    interface INewLesson
+    interface ILessonHandler
     {
         List<Lesson> Lessons { get; }
         void NewLesson(Lesson lesson);
+        void DeleteLesson(Lesson lesson);
     }
 }

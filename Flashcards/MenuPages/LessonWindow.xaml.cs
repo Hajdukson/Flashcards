@@ -1,6 +1,7 @@
 ﻿using Flashcards.ApplicationWindows;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Flashcards
     /// </summary>
     public partial class LessonWindow : Page
     {
-        readonly INewLesson _lessonRepository = new LessonsRepository();
+        readonly ILessonHandler _lessonRepository = new LessonsRepository();
         Lesson _lesson;
         string _lessonName;
         public LessonWindow(string lessonName)
@@ -78,7 +79,12 @@ namespace Flashcards
         }
         private void Delete_lesson(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Are you sure?", "Delete lesson", MessageBoxButton.YesNo);
+            MessageBoxResult resoult = MessageBox.Show("Are you sure?", "Statment", MessageBoxButton.YesNo);
+            if (resoult == MessageBoxResult.Yes)
+            { 
+                _lessonRepository.DeleteLesson(_lesson);
+                File.Delete($"{Directory.GetCurrentDirectory()}/Lessons/{_lesson.Name}.txt");
+            }
         }
     }
 }

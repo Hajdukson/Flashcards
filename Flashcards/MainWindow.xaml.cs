@@ -21,7 +21,7 @@ namespace Flashcards
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly INewLesson _lessonRepository = new LessonsRepository();
+        readonly ILessonHandler _lessonRepository = new LessonsRepository();
         ListOfLessons _listOfLessons = new ListOfLessons();
         public MainWindow()
         {
