@@ -55,10 +55,8 @@ namespace Flashcards
         public ObservableCollection<string> UploadLessons()
         {
             if (!File.Exists(_dbName))
-            {
-                MessageBox.Show("The repository is empty");
                 return null;
-            }
+
             var lines = File.ReadAllLines(_dbName);
             
             ObservableCollection<string> lessons = new ObservableCollection<string>();

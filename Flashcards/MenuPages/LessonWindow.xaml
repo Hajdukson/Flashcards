@@ -44,16 +44,16 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel Orientation="Horizontal" Margin="5" Grid.Column="0" Grid.Row="0">
+                    <StackPanel Orientation="Horizontal" Margin="5,6,0,0" Grid.Column="0" Grid.Row="0">
                         <Label Content="Word:" Width="50" Height="30" VerticalAlignment="Top"/>
                         <TextBox FontSize="18" Width="100" Height="30" x:Name="Foreign" VerticalAlignment="Top"/>
-                        <Label Content="Meaning:" Height="30" VerticalAlignment="Top"/>
+                        <Label Content="Meaning:" Height="30" VerticalAlignment="Top" Width="62"/>
                         <TextBox FontSize="18" Width="100" Height="30" x:Name="Meaning" VerticalAlignment="Top"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="5,10,0,0">
                         <Label Content="Some notes:"/>
-                        <TextBox FontSize="18" Width="233" Height="30" x:Name="Description" VerticalAlignment="Top"/>
+                        <TextBox FontSize="18" Width="232" Height="32" x:Name="Description" VerticalAlignment="Top"/>
                     </StackPanel>
                 </Grid>
 

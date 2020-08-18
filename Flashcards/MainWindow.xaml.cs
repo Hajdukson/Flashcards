@@ -22,7 +22,7 @@ namespace Flashcards
     public partial class MainWindow : Window
     {
         readonly ILessonHandler _lessonRepository = new LessonsRepository();
-        ListOfLessons _listOfLessons = new ListOfLessons();
+        //ListOfLessons _listOfLessons = new ListOfLessons();
         public MainWindow()
         {
             InitializeComponent();

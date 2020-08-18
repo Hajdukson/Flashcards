@@ -36,8 +36,10 @@ namespace Flashcards
             Word word = _lesson.RetriveDrawnWord();
             _word = word;
             drawnWord.Text = word.Meaning;
+
             description.Text = StringHandler.RetrivAndHideWordInDescription(
                 word.Foreign, word.Notes);
+
             _meaning = word.Foreign;
             
         }
@@ -73,6 +75,7 @@ namespace Flashcards
             }
             else
             {
+                enteredWord.Text = _word.Foreign;
                 description.Text = _word.Notes;
                 falseImg.Visibility = Visibility.Visible;
             }

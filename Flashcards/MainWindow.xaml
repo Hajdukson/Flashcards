@@ -45,7 +45,7 @@
                 
                 <Button Click="Select_lesson" Width="100" 
                         Margin="10,5,0,5" Padding="5" Background="#E24343"
-                        Content="Select lesson\Refresh" Style="{StaticResource buttonStyle}"/>
+                        Content="Load lessons" Style="{StaticResource buttonStyle}"/>
 
                 <Button Click="Exit_Button" Width="100"
                         Margin="10,5,0,5" Padding="5"  Background="#E24343"
