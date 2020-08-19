@@ -69,13 +69,13 @@ namespace Flashcards
             {
                 _lesson = _lessonRepository.Lessons.Find(lesson => lesson.Name == _lessonName);
                 StartLearningWindow startLearningWindow = new StartLearningWindow(_lesson);
-                startLearningWindow.Show();
+                startLearningWindow.ShowDialog();
             }
         }
         private void Edit_Word(object sender, RoutedEventArgs e)
         {
             EditWord editWord = new EditWord(_lesson);
-            editWord.Show();
+            editWord.ShowDialog();
         }
         private void Delete_lesson(object sender, RoutedEventArgs e)
         {

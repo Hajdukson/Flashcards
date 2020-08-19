@@ -5,9 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Flashcards"
         mc:Ignorable="d"
-        Title="StartLearningWindow" Height="350" Width="500"
-        WindowStartupLocation="CenterOwner"
-        
+        Title="Learning" Height="350" Width="500"
+        WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
 
     <Grid>
