@@ -22,7 +22,7 @@ namespace Flashcards.ApplicationWindows
     public partial class EditWord : Window
     {
         Lesson _lesson;
-        ObservableCollection<Word> listOfWords = new ObservableCollection<Word>();
+        ObservableCollection<Word> _listOfWords = new ObservableCollection<Word>();
         public EditWord(Lesson lesson)
         {
             InitializeComponent();
@@ -30,15 +30,21 @@ namespace Flashcards.ApplicationWindows
 
             foreach (var word in _lesson.Words)
             {
-                listOfWords.Add(word);
+                _listOfWords.Add(word);
             }
-            DataGridLesson.ItemsSource = listOfWords;
+            DataGridLesson.ItemsSource = _listOfWords;
         }
         private void ApplyChanges_Click(object sender, RoutedEventArgs e)
         {
-            List<string> lines = (from word in listOfWords
-                                  let line = string.Format("{0};{1};{2}", word.Foreign.ToLower(),
-                                  word.Meaning, word.Notes)select line).ToList();
+            List<string> lines = new List<string>();
+            foreach (var word in _listOfWords)
+            {
+                var line = string.Format("{0};{1};{2}", word.Foreign.ToLower(),
+                                  word.Meaning, word.Notes);
+
+
+                lines.Add(line);
+            }
 
             File.WriteAllLines($"{Directory.GetCurrentDirectory()}/Lessons/{_lesson.Name}.txt", lines);
         }

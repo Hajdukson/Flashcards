@@ -23,6 +23,7 @@
             </Style.Triggers>
         </Style>
     </Page.Resources>
+    
     <Grid Margin="0,20,0,0">
         <StackPanel Width="150" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10">
             <Button Content="Start Learning" Width="140" Height="30" FontSize="20" Click="Start_Learning" Style="{StaticResource buttonStyle}"/>
@@ -30,8 +31,8 @@
             <Button Content="Delete lesson" Width="140" Height="30" FontSize="20" Click="Delete_lesson"  Style="{StaticResource buttonStyle}"/>
         </StackPanel>
 
-        <Border BorderThickness="3" BorderBrush="#444" Height="90" Width="412" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="95,170,93,150">
-            <Grid Margin="-3,-3,3,3">
+        <Border BorderThickness="3" BorderBrush="#444" Height="90" Width="416" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,150,0,0">
+            <Grid Margin="3,-3,3,3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="320"/>
                     <ColumnDefinition/>

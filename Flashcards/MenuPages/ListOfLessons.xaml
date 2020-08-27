@@ -5,12 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Flashcards"
       mc:Ignorable="d" 
-      Height="550" Width="600"
+      d:DesignHeight="430" d:DesignWidth="600"
       Title="ListOfLessons">
 
-    <StackPanel>
-        <Frame x:Name="Page2"/>
-        <ListBox SelectionMode="Extended" 
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+        
+        <Frame x:Name="Page2" NavigationUIVisibility="Hidden"/>
+        
+            <ListBox SelectionMode="Extended" 
                  SelectionChanged="ListBox_SelectionChanged" 
                  x:Name="LessonsList" FontSize="20"
                  FontWeight="Bold"
@@ -35,5 +39,8 @@
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
+        
     </StackPanel>
+    </ScrollViewer>
+
 </Page>

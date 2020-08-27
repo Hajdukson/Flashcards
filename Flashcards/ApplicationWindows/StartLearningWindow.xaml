@@ -13,7 +13,7 @@
         <StackPanel Margin="0,20">
             
             <TextBlock x:Name="drawnWord" Width="150" Height="30" FontSize="20" Margin="0,5,0,20" TextAlignment="Center"/>
-            <TextBox x:Name="enteredWord" Width="200" Height="30" Margin="0,5,0,20" KeyDown="CheckWord_KeyDown" FontSize="20" TextAlignment="Center"/>
+            <TextBox x:Name="enteredWord" Width="200" Height="30" Margin="0,5,0,20" FontSize="20" TextAlignment="Center"/>
             <TextBlock x:Name="description" Width="320" Height="80" FontSize="20" Margin="0,5,0,20" TextAlignment="Center" TextWrapping="Wrap"/>
             
             <Grid>

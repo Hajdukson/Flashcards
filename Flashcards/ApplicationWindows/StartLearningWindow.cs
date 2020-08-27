@@ -83,12 +83,6 @@ namespace Flashcards
             checkWord.Visibility = Visibility.Collapsed;
             nextWord.Visibility = Visibility.Visible;
         }
-        private void CheckWord_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.Key == Key.Return)
-                WordHandler();
-        }
-
         private void Check_Word(object sender, RoutedEventArgs e)
         {
             WordHandler();

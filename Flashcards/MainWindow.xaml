@@ -31,8 +31,8 @@
                 <Label Margin="0,0,0,0" FontSize="30" VerticalAlignment="Center" Foreground="#F4F0E6">Flashcards</Label>
             </StackPanel>
 
-            <Frame Height="430" Background="White" NavigationUIVisibility="Hidden" x:Name="Page1"/>
-
+            <Frame Height="430" Background="White" x:Name="Page1" NavigationUIVisibility="Hidden"/>
+            
             <StackPanel  VerticalAlignment="Bottom" HorizontalAlignment="Center" 
                          Orientation="Horizontal" Height="50">
 
