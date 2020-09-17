@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Flashcards.Core.Models
 {
-    class WordModel
+    public class WordModel
     {
+        public string Foreign { get; set; }
+        public string Meaning { get; set; }
+        public string Notes { get; set; }
     }
 }

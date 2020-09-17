@@ -2,9 +2,7 @@
 {
     public class Word : EntityBase
     {
-        public string Foreign { get; set; }
-        public string Meaning { get; set; }
-        public string Notes { get; set; }
+
         public Word(string foreign, string meaning, string notes)
         {
             Foreign = foreign;
