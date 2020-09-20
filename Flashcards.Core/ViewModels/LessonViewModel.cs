@@ -20,7 +20,6 @@ namespace Flashcards.Core.ViewModels
         }
 
         private string _meaning;
-
         public string Meaning
         {
             get { return _meaning; }

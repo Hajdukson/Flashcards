@@ -10,7 +10,7 @@ namespace Flashcards.Core
     {
         public override void Initialize()
         {
-            RegisterAppStart<LessonViewModel>();
+            this.RegisterAppStart<LessonBookViewModel>();
         }
     }
 }
