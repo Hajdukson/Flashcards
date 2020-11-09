@@ -1,4 +1,4 @@
-﻿using MvvmCross.Platforms.Wpf.Views;
+﻿using Flashcards.Core;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,16 +12,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Flashcards.Wpf.Views
+namespace Flashcards.Wpf
 {
     /// <summary>
-    /// Interaction logic for LessonView.xaml
+    /// Interaction logic for LessonsPage.xaml
     /// </summary>
-    public partial class LessonView : MvxWpfView
+    public partial class LessonsPage : Page
     {
-        public LessonView()
+        public LessonsPage()
         {
             InitializeComponent();
+            DataContext = new LessonsPageViewModel();
         }
     }
 }

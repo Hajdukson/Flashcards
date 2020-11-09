@@ -1,5 +1,4 @@
-﻿using MvvmCross.Platforms.Wpf.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +18,7 @@ namespace Flashcards.Wpf
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : MvxWindow
+    public partial class MainWindow : Window
     {
         public MainWindow()
         {
